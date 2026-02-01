@@ -9,6 +9,29 @@
 [ext_resource type="Script" uid="uid://cq2q0qicqt7b0" path="res://components/spawner_component.gd" id="7_le0bn"]
 [ext_resource type="PackedScene" uid="uid://dokln1kqyce1y" path="res://projectiles/laser.tscn" id="8_8ru6t"]
 [ext_resource type="Script" uid="uid://diiv50ifnrwsr" path="res://components/scale_component.gd" id="9_le0bn"]
+[ext_resource type="Texture2D" uid="uid://bwj0v7rpgufxh" path="res://assets/ship_flame.png" id="10_8ru6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lltil"]
+atlas = ExtResource("10_8ru6t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xpe7"]
+atlas = ExtResource("10_8ru6t")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbeao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lltil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xpe7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3mk2"]
 atlas = ExtResource("1_lyjrp")
@@ -52,7 +75,16 @@ animations = [{
 [node name="Ship" type="Node2D" unique_id=454748939]
 script = ExtResource("1_6m5c2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=703817703]
+[node name="Anchor" type="Node2D" parent="." unique_id=122319275]
+
+[node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor" unique_id=645868512]
+position = Vector2(0, 16)
+sprite_frames = SubResource("SpriteFrames_kbeao")
+autoplay = "default"
+frame = 1
+frame_progress = 0.40250573
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor" unique_id=703817703]
 sprite_frames = SubResource("SpriteFrames_6u6rn")
 animation = &"center"
 autoplay = "center"
@@ -90,6 +122,6 @@ autostart = true
 
 [node name="ScaleComponent" type="Node" parent="." unique_id=988789296 node_paths=PackedStringArray("sprite")]
 script = ExtResource("9_le0bn")
-sprite = NodePath("../AnimatedSprite2D")
+sprite = NodePath("../Anchor")
 scale_amount = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://diiv50ifnrwsr"

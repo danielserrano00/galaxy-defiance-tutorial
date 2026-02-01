@@ -5,7 +5,7 @@ extends Node2D
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent as SpawnerComponent
 @onready var fire_rate_timer: Timer = $FireRateTimer
 @onready var scale_component: ScaleComponent = $ScaleComponent as ScaleComponent
-
+@on
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,3 +16,9 @@ func fire_lasers() -> void:
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
 	scale_component.tween_scale()
+
+func _process(delta: float) -> void:
+	animate_the_ship()
+
+func animate_the_ship() -> void:
+	pass
