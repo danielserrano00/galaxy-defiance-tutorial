@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dokln1kqyce1y"]
+
+[ext_resource type="Script" uid="uid://c6444prirecdo" path="res://projectiles/laser.gd" id="1_8q7g5"]
+[ext_resource type="Texture2D" uid="uid://cpa8mi3qbhbx6" path="res://assets/laser_small.png" id="1_rl7n7"]
+[ext_resource type="Script" uid="uid://m5rlt84myxbm" path="res://components/move_component.gd" id="2_8q7g5"]
+[ext_resource type="Script" uid="uid://diiv50ifnrwsr" path="res://components/scale_component.gd" id="4_i72jr"]
+[ext_resource type="Script" uid="uid://cxtwes5cv02d5" path="res://components/flash_component.gd" id="5_1q6dw"]
+
+[node name="Laser" type="Node2D" unique_id=1369606563]
+script = ExtResource("1_8q7g5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889841309]
+texture = ExtResource("1_rl7n7")
+
+[node name="MoveComponent" type="Node" parent="." unique_id=928960037 node_paths=PackedStringArray("actor")]
+script = ExtResource("2_8q7g5")
+actor = NodePath("..")
+velocity = Vector2(0, -200)
+metadata/_custom_type_script = "uid://m5rlt84myxbm"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1878575030]
+rect = Rect2(-2, -3, 4, 8)
+
+[node name="ScaleComponent" type="Node" parent="." unique_id=1613931986 node_paths=PackedStringArray("sprite")]
+script = ExtResource("4_i72jr")
+sprite = NodePath("../Sprite2D")
+scale_amount = Vector2(1.75, 1.75)
+scale_duration = 1.0
+metadata/_custom_type_script = "uid://diiv50ifnrwsr"
+
+[node name="FlashComponent" type="Node" parent="." unique_id=1943586891 node_paths=PackedStringArray("sprite")]
+script = ExtResource("5_1q6dw")
+sprite = NodePath("../Sprite2D")
+flash_duration = 0.1
+metadata/_custom_type_script = "uid://cxtwes5cv02d5"
