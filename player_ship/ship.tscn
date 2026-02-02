@@ -11,25 +11,30 @@
 [ext_resource type="Script" uid="uid://diiv50ifnrwsr" path="res://components/scale_component.gd" id="9_le0bn"]
 [ext_resource type="Texture2D" uid="uid://bwj0v7rpgufxh" path="res://assets/ship_flame.png" id="10_8ru6t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lltil"]
-atlas = ExtResource("10_8ru6t")
-region = Rect2(16, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xpe7"]
 atlas = ExtResource("10_8ru6t")
 region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lltil"]
+atlas = ExtResource("10_8ru6t")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kbeao"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lltil")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1xpe7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"banking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lltil")
+}],
+"loop": true,
+"name": &"center",
 "speed": 10.0
 }]
 
@@ -80,9 +85,8 @@ script = ExtResource("1_6m5c2")
 [node name="FlameAnimatedSprite" type="AnimatedSprite2D" parent="Anchor" unique_id=645868512]
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_kbeao")
-autoplay = "default"
-frame = 1
-frame_progress = 0.40250573
+animation = &"center"
+autoplay = "center"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor" unique_id=703817703]
 sprite_frames = SubResource("SpriteFrames_6u6rn")
