@@ -26,6 +26,5 @@
 		"**/Thumbs.db",
 		"**/.classpath",
 		"**/.settings",
-		"**/.zed"
 	],
 }
