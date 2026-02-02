@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dx6f8fow8uyd6"]
 
 [ext_resource type="PackedScene" uid="uid://c5jdv64t41asm" path="res://player_ship/ship.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://dmi3urwbsfnkx" path="res://effects/space_background.tscn" id="2_fj7yv"]
 
 [node name="World" type="Node2D" unique_id=1147377760]
 
 [node name="Ship" parent="." unique_id=454748939 instance=ExtResource("1_f3sb7")]
 position = Vector2(80, 216)
+
+[node name="SpaceBackground" parent="." unique_id=987286987 instance=ExtResource("2_fj7yv")]
