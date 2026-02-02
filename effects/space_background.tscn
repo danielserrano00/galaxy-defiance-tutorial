@@ -10,6 +10,7 @@ script = ExtResource("1_5bor5")
 
 [node name="SpaceLayer" type="ParallaxLayer" parent="." unique_id=527450837]
 unique_name_in_owner = true
+position = Vector2(-1, 0)
 motion_mirroring = Vector2(0, 240)
 
 [node name="Space" type="TextureRect" parent="SpaceLayer" unique_id=795849654]

@@ -16,7 +16,6 @@
 		"**/.gitattributes",
 		"**/.gitignore",
 		"**/sounds",
-		"**/effects",
 		"**/assets",
 		"**/.svn",
 		"**/.hg",
