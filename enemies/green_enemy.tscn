@@ -32,16 +32,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0nf3"]
+radius = 7.017834
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rcqd"]
+radius = 6.0207973
+
 [node name="GreenEnemy" unique_id=480584597 instance=ExtResource("1_rn0dr")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2096279230]
 sprite_frames = SubResource("SpriteFrames_4lrpy")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.20563586
+frame = 2
+frame_progress = 0.69245946
 
 [node name="MoveComponent" parent="." index="1" unique_id=1864413966]
 velocity = Vector2(0, 40)
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="3" unique_id=313681391]
 rect = Rect2(-8, -7, 16, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" parent_id_path=PackedInt32Array(259654531) index="0" unique_id=1522657291]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_b0nf3")
+
+[node name="HitboxComponent" parent="." index="8" unique_id=1541358599]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1666165951]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_6rcqd")

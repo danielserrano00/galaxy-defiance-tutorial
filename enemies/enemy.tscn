@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://diiv50ifnrwsr" path="res://components/scale_component.gd" id="3_epsnb"]
 [ext_resource type="Script" uid="uid://cxtwes5cv02d5" path="res://components/flash_component.gd" id="4_4w5fm"]
 [ext_resource type="Script" uid="uid://cpw5vmbugx3oh" path="res://components/shake_component.gd" id="5_uba7a"]
+[ext_resource type="Script" uid="uid://bj8ywse70fp8p" path="res://components/hurtbox_component.gd" id="7_4w5fm"]
+[ext_resource type="Script" uid="uid://c7waju7guwc27" path="res://components/hitbox_component.gd" id="8_uba7a"]
 
 [node name="Enemy" type="Node2D" unique_id=480584597]
 script = ExtResource("1_3t1x0")
@@ -37,3 +39,14 @@ metadata/_custom_type_script = "uid://cxtwes5cv02d5"
 script = ExtResource("5_uba7a")
 node = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://cpw5vmbugx3oh"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=259654531]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("7_4w5fm")
+metadata/_custom_type_script = "uid://bj8ywse70fp8p"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1541358599]
+collision_layer = 0
+script = ExtResource("8_uba7a")
+metadata/_custom_type_script = "uid://c7waju7guwc27"
