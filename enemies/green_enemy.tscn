@@ -50,6 +50,9 @@ frame_progress = 0.69245946
 [node name="MoveComponent" parent="." index="1" unique_id=1864413966]
 velocity = Vector2(0, 40)
 
+[node name="StatsComponent" parent="." index="2" unique_id=2140139084]
+health = 3
+
 [node name="VisibleOnScreenNotifier2D" parent="." index="3" unique_id=313681391]
 rect = Rect2(-8, -7, 16, 15)
 
