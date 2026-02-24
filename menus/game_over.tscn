@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj1h7siyb60xy" path="res://menus/game_over.gd" id="1_hl86a"]
 [ext_resource type="PackedScene" uid="uid://dmi3urwbsfnkx" path="res://effects/space_background.tscn" id="1_slp2k"]
+[ext_resource type="Resource" uid="uid://dx1djmirkprdy" path="res://game_stats.tres" id="2_a6cs8"]
 [ext_resource type="LabelSettings" uid="uid://lyux8pgux32t" path="res://fonts/title_label_settings.tres" id="2_hl86a"]
 [ext_resource type="LabelSettings" uid="uid://b4kbn4k1bdngv" path="res://fonts/default_label_settings.tres" id="3_a6cs8"]
 
@@ -13,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hl86a")
+game_stats = ExtResource("2_a6cs8")
 
 [node name="SpaceBackground" parent="." unique_id=987286987 instance=ExtResource("1_slp2k")]
 
@@ -31,6 +33,40 @@ layout_mode = 2
 layout_mode = 2
 text = "Game Over"
 label_settings = ExtResource("2_hl86a")
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=2057625202]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer" unique_id=738754965]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score"
+label_settings = ExtResource("3_a6cs8")
+
+[node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer" unique_id=852716955]
+unique_name_in_owner = true
+layout_mode = 2
+text = "o"
+label_settings = ExtResource("3_a6cs8")
+
+[node name="HighScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1339683339]
+layout_mode = 2
+
+[node name="HighScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/HighScoreHBoxContainer" unique_id=1644422094]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "High Score"
+label_settings = ExtResource("3_a6cs8")
+
+[node name="HighScoreValue" type="Label" parent="CenterContainer/VBoxContainer/HighScoreHBoxContainer" unique_id=782406364]
+unique_name_in_owner = true
+layout_mode = 2
+text = "o"
+label_settings = ExtResource("3_a6cs8")
+
+[node name="EmptySpace" type="Control" parent="CenterContainer/VBoxContainer" unique_id=903574804]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
 
 [node name="MenuLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1763446351]
 layout_mode = 2
