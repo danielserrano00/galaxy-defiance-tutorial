@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://cq2q0qicqt7b0" path="res://components/spawner_component.gd" id="10_ccbdt"]
 [ext_resource type="PackedScene" uid="uid://dsk2ha7tvkvxq" path="res://effects/explosion_effect.tscn" id="11_mgey2"]
 [ext_resource type="Script" uid="uid://lrn2laoib78y" path="res://components/destroyed_component.gd" id="12_cjbay"]
+[ext_resource type="Script" uid="uid://bh28sdub0hnky" path="res://components/score_component.gd" id="13_mgey2"]
+[ext_resource type="Resource" uid="uid://dx1djmirkprdy" path="res://game_stats.tres" id="14_cjbay"]
 
 [node name="Enemy" type="Node2D" unique_id=480584597]
 script = ExtResource("1_3t1x0")
@@ -72,3 +74,8 @@ actor = NodePath("..")
 stats_component = NodePath("../StatsComponent")
 destroy_effect_spawner_component = NodePath("../SpawnerComponent")
 metadata/_custom_type_script = "uid://lrn2laoib78y"
+
+[node name="ScoreComponent" type="Node" parent="." unique_id=1601176454]
+script = ExtResource("13_mgey2")
+game_stats = ExtResource("14_cjbay")
+metadata/_custom_type_script = "uid://bh28sdub0hnky"
