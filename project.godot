@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Galaxy Defiance Tutorial"
-run/main_scene="uid://dx6f8fow8uyd6"
+run/main_scene="uid://f1ned414uucx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
